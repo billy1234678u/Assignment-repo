@@ -1,31 +1,39 @@
 #include <iostream>
+#include <string>
 using namespace std;
 int main()
 {
-	float height, weight, BMI;
-	cout<<"Enter Height:"<<endl;
-	cin>>height;
-	cout<<"Enter Weight:"<<endl;
-	cin>>weight;
-	
-	BMI=weight/(height,2);
-	switch{
-	case (BMI<=20):
-		cout<<"Lower than normal weight."<<endl;
-		break;
-	case (BMI=21,22,23,24,25):
-		cout<<"Normal Weight."<<endl;
-		break;
-	case (BMI=26 27 28 29 30):
-		cout<<"Over Weight."<<endl;
-		break;
-	case (BMI=31 32 33 34 35 36 37 38 39 40):
-		cout<<"Obese"<<endl;
-		break;
-	case (BMI=>40):
-		cout<<"Extreme Obese."<<endl;
-    default:
-    	cout<<"Invalid Input."<<endl;
-		break;}
-	return 0;
+    double height, weight, bmi;
+
+    cout << "Enter the person's height (in meters): "<<endl;
+    cin >> height;
+    cout << "Enter the person's weight (in kilograms): "<<endl;
+    cin >> weight;
+
+    bmi = weight / (height * height);
+    string message;
+    if (bmi < 20)
+	{
+        message = "Lower than normal weight";
+    }
+	 else if (20 <= bmi && bmi <= 25)
+	{
+        message = "Normal Weight";
+    }
+	 else if (26 <= bmi && bmi <= 30)
+	{
+        message = "Overweight";
+    }
+	 else if (31 <= bmi && bmi <= 40) 
+    {
+        message = "Obese";
+    }
+	 else
+	{
+        message = "Extreme obese";
+    }
+    cout << "BMI: " << bmi <<endl;
+    cout << "Message: " << message <<endl;
+
+    return 0;
 }
